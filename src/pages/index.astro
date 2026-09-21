@@ -1,4 +1,7 @@
 ---
+const pageTitle = "Home";
+
+const testItemUrls = ['soda', 'juice'];
 
 ---
 
@@ -9,12 +12,16 @@
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
 		<a href="/about/">About</a>
 		<a href="/blog/">Blog</a>
-		<a href="/test/soda/">Soda</a>
+		<div>
+			{testItemUrls.map((items) => (
+				<a href={`/test/${items}/`}>{items}</a> ))}
+		</div>
+
 		<h1>Oh Hi there</h1>
 	</body>
 </html>

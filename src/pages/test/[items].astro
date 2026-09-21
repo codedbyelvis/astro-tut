@@ -2,11 +2,14 @@
 
         export function getStaticPaths() {
   return [
-    { params: { items: "soda" }}         
+    { params: { items: "soda"}, props: { quantity: 1 }},         
+    {params: { items: "juice"}, props: { quantity: 0 }}         
     ];
 }
 
-const { items } = Astro.params;
+const {items} = Astro.params;
+const {quantity} = Astro.props;
+
 ---
 
 <html lang="en">
@@ -25,6 +28,6 @@ const { items } = Astro.params;
 		<h2>item name</h2>
 		<h2>item image</h2>
         <h3>item desc</h3>
-        <div>I love a refreshing {items}!</div>
+        {quantity>=1 && <p>I love a refreshing {items}!</p>}
 	</body>
 </html>
