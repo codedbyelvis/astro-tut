@@ -1,0 +1,30 @@
+---
+
+        export function getStaticPaths() {
+  return [
+    { params: { items: "soda" }}         
+    ];
+}
+
+const { items } = Astro.params;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>test item</title>
+	</head>
+	<body>
+		<a href="../about/">About</a>
+		<a href="../blog/">Blog</a>
+		<h1>automation test</h1>
+		<h2>item name</h2>
+		<h2>item image</h2>
+        <h3>item desc</h3>
+        <div>I love a refreshing {items}!</div>
+	</body>
+</html>
