@@ -1,9 +1,15 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Greeting from '../components/Greeting';
+
 const pageTitle = "Home Page";
+const testItemUrls = ['soda', 'juice'];
 ---
 <BaseLayout pageTitle={pageTitle}>
-    <h1>Oh Hi there</h1>
-	 <Greeting client:load messages={["Hi", "Hello", "Howdy", "Hey there","Hej", "Hallo", "Hola", "Habari"]} />
+		<div>
+			{testItemUrls.map((items) => (
+				<a href={`/test/${items}/`}>{items}</a> ))}
+		</div>
+	<h1>Oh Hi there</h1>
+	<Greeting client:load messages={["Hi", "Hello", "Howdy", "Hey there","Hej", "Hallo", "Hola", "Habari"]} />
 </BaseLayout>
