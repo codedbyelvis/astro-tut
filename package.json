@@ -12,10 +12,18 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/markdoc": "^2.0.9",
     "@astrojs/preact": "^6.0.5",
+    "@astrojs/react": "^7.0.0",
     "@astrojs/rss": "^4.0.19",
+    "@keystatic/astro": "^6.0.0",
+    "@keystatic/core": "^0.6.9",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
     "astro": "^7.3.5",
-    "preact": "^10.29.8"
+    "preact": "^10.29.8",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
   },
   "allowScripts": {
     "esbuild": true
